@@ -5,7 +5,6 @@ class Solution:
         length= len(original)
         if (length != m*n):
             return []
-            print(h)
         
         res= []
         
