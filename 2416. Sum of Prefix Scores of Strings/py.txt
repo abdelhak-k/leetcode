@@ -1,0 +1,23 @@
+class Solution:
+    def sumPrefixScores(self, words: List[str]) -> List[int]:
+        MAP= {}
+        
+        for word in words:
+            n=len(word)
+
+            for i in range(1,n+1):
+                if word[0:i] in MAP.keys():
+                    MAP[word[0:i]]+=1
+                else:
+                    MAP[word[0:i]]=1
+
+
+        size= len(words)
+        count = [0]*size
+        
+        for i in range(size):
+            n=len(words[i])
+            for j in range(1,n+1):
+                count[i]+= MAP[words[i][0:j]]
+        
+        return count
